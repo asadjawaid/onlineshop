@@ -12,8 +12,8 @@ import services.ProductManagementService;
 import services.impl.DefaultProductManagementService;
 
 public class ProductCatalogMenu implements Menu {
-    private ProductManagementService productManagementService;
-    private ApplicationContext context;
+    private final ProductManagementService productManagementService;
+    private final ApplicationContext context;
 
     {
         context = ApplicationContext.getInstance();
@@ -78,7 +78,6 @@ public class ProductCatalogMenu implements Menu {
     @Override
     public void printMenuHeader() {
         System.out.println("***** PRODUCT CATALOG *****");
-        System.out.println("Enter a product's id to add it to the cart or 'menu' if you want to navigate back to the main menu");
     }
 
     /**
@@ -89,6 +88,8 @@ public class ProductCatalogMenu implements Menu {
         for (Product product : productManagementService.getProducts()) {
             System.out.println(product);
         }
+
+        System.out.println("Enter a product id to add it to the cart or type 'menu' to navigate back to the main menu");
     }
 
     /**
