@@ -12,14 +12,18 @@ import java.util.Scanner;
 
 public class CheckoutMenu implements Menu {
 
-    private OrderManagementService orderManagementService;
-    private ApplicationContext context;
+    private final OrderManagementService orderManagementService;
+    private final ApplicationContext context;
 
     {
         orderManagementService = DefaultOrderManagementService.getInstance();
         context = ApplicationContext.getInstance();
     }
 
+    /**
+     * The start method calls the processCheckout method to process the payment for the product(s) inside of the cart
+     * and the navigates back to the main menu
+     */
     @Override
     public void start() {
         processCheckout(context.getSessionCart());
@@ -32,9 +36,10 @@ public class CheckoutMenu implements Menu {
     }
 
     /**
-     *
+     * This method will process the payment and validate to see if a credit card is valid or not. If the user has
+     * entered an invalid credit card, they have once more chance. If the card is validated and correct then we create
+     * a new order for the current logged in user.
      * @param cart to process and checkout all the products
-     * @return true if the checkout was successful and vice versa.
      */
     private void processCheckout(Cart cart) {
         Scanner scanner = new Scanner(System.in);
