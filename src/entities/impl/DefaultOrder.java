@@ -3,6 +3,8 @@ package entities.impl;
 import entities.Order;
 import entities.Product;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DefaultOrder implements Order {
@@ -15,7 +17,9 @@ public class DefaultOrder implements Order {
     // The person that made the order
     private int customerId;
 
-    public DefaultOrder() {}
+    public DefaultOrder() {
+        products = new ArrayList<>();
+    }
 
     /**
      *
@@ -56,10 +60,6 @@ public class DefaultOrder implements Order {
 
     @Override
     public String toString() {
-        return "DefaultOrder{" +
-                "creditCardNumber='" + creditCardNumber + '\'' +
-                ", products=" + products +
-                ", customerId=" + customerId +
-                '}';
+        return "Order:[\n\tcreditCardNumber: " + creditCardNumber + ",\n\tproducts:" + Arrays.toString(products.toArray()) + ",\n\tcustomerId: " + customerId +"\n]";
     }
 }
