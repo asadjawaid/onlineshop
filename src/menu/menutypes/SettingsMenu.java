@@ -1,11 +1,9 @@
 package menu.menutypes;
 
 import configs.ApplicationContext;
-import entities.User;
 import menu.Menu;
 import services.UserManagementService;
 import services.impl.DefaultUserManagementService;
-
 import java.util.Scanner;
 
 public class SettingsMenu implements Menu {

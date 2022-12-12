@@ -6,7 +6,6 @@ import entities.impl.DefaultUser;
 import menu.Menu;
 import services.UserManagementService;
 import services.impl.DefaultUserManagementService;
-
 import java.util.Scanner;
 
 public class SignUpMenu implements Menu {

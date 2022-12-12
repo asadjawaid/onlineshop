@@ -13,7 +13,7 @@ public class ChangePasswordMenu implements Menu {
     }
 
     /**
-     * This function
+     * Allows user to change their current password then navigates them back to the main menu.
      */
     @Override
     public void start() {

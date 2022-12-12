@@ -4,9 +4,7 @@ import java.util.Scanner;
 
 import configs.ApplicationContext;
 import entities.Cart;
-import entities.Order;
 import entities.Product;
-import entities.impl.DefaultOrder;
 import menu.Menu;
 import services.ProductManagementService;
 import services.impl.DefaultProductManagementService;

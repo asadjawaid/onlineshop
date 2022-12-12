@@ -1,15 +1,11 @@
 package menu.menutypes;
 
 import configs.ApplicationContext;
-import entities.Cart;
 import entities.Order;
-import entities.Product;
 import entities.impl.DefaultOrder;
 import menu.Menu;
 import services.OrderManagementService;
 import services.impl.DefaultOrderManagementService;
-
-import java.util.List;
 import java.util.Scanner;
 
 public class CheckoutMenu implements Menu {

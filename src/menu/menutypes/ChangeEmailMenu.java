@@ -2,8 +2,6 @@ package menu.menutypes;
 
 import configs.ApplicationContext;
 import menu.Menu;
-import services.UserManagementService;
-import services.impl.DefaultUserManagementService;
 
 import java.util.Scanner;
 
