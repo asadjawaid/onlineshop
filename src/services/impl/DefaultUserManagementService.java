@@ -3,6 +3,7 @@ package services.impl;
 import entities.User;
 import services.UserManagementService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DefaultUserManagementService implements UserManagementService {
@@ -12,7 +13,7 @@ public class DefaultUserManagementService implements UserManagementService {
 
     private static DefaultUserManagementService instance = null;
 
-    private List<User> users;
+    private final List<User> users = new ArrayList<>();
 
     /**
      *
