@@ -19,6 +19,7 @@ public class ChangePasswordMenu implements Menu {
     public void start() {
         printMenuHeader();
         changePassword();
+        context.getMainMenu().start();
     }
 
     @Override
@@ -33,8 +34,6 @@ public class ChangePasswordMenu implements Menu {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter new password: ");
         String newPassword = scanner.nextLine();
-
-        scanner.close();
 
         System.out.println("Your password has been successfully changed.");
         context.getLoggedInUser().setPassword(newPassword); // set the new password
