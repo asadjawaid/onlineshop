@@ -22,7 +22,7 @@ public class MainMenu implements Menu {
 
 
     // Instance variables
-    private ApplicationContext context;
+    private final ApplicationContext context;
 
     // Will get called everytime an instance of a MainMenu gets created.
     {
@@ -35,7 +35,7 @@ public class MainMenu implements Menu {
             context.setMainMenu(this);
         }
 
-        Menu menuToNavigate = null;
+        Menu menuToNavigate;
         Scanner scanner = new Scanner(System.in);
 
         mainLoop:
@@ -92,6 +92,7 @@ public class MainMenu implements Menu {
             }
         }
 
+        scanner.close();
         menuToNavigate.start();
     }
 
