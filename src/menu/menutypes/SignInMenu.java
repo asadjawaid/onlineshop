@@ -9,11 +9,11 @@ import services.impl.DefaultUserManagementService;
 import java.util.Scanner;
 
 public class SignInMenu implements Menu {
-    private static final String WELCOME_MESSAGE = "Glad to see you back ";
+    private static final String WELCOME_MESSAGE = "Glad to see you back";
     private static final String ERROR_MESSAGE = "Unfortunately, such login and password doesn't exist!";
 
-    private UserManagementService userManagementService;
-    private ApplicationContext context;
+    private final UserManagementService userManagementService;
+    private final ApplicationContext context;
 
     {
         userManagementService = DefaultUserManagementService.getInstance();

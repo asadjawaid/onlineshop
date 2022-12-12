@@ -10,14 +10,13 @@ import services.impl.DefaultUserManagementService;
 import java.util.Scanner;
 
 public class SignUpMenu implements Menu {
-    private ApplicationContext context;
-    private UserManagementService userManagementService;
+    private final ApplicationContext context;
+    private final UserManagementService userManagementService;
 
     {
         context = ApplicationContext.getInstance();
         userManagementService = DefaultUserManagementService.getInstance();
     }
-
 
     /**
      * This method sign up new user to the system.
@@ -28,15 +27,15 @@ public class SignUpMenu implements Menu {
         printMenuHeader();
 
         System.out.print("Enter your first name: ");
-        String firstName = scanner.nextLine().trim();
+        String firstName = capitalize(scanner.nextLine().trim());
 
         System.out.print("Enter your last name: ");
-        String lastName = scanner.nextLine().trim();
+        String lastName = capitalize(scanner.nextLine().trim());
 
         System.out.print("Enter your password: ");
         String password = scanner.nextLine().trim();
 
-        System.out.println("Enter your email: ");
+        System.out.print("Enter your email: ");
         String email = scanner.nextLine().trim();
 
         User newUser = new DefaultUser(firstName, lastName, password, email);
@@ -48,8 +47,6 @@ public class SignUpMenu implements Menu {
             System.out.println(messageOutput);
         } else context.setLoggedInUser(newUser); // Sign in the user
 
-        scanner.close();
-
         // Navigate back to the main menu
         context.getMainMenu().start();
     }
@@ -57,5 +54,16 @@ public class SignUpMenu implements Menu {
     @Override
     public void printMenuHeader() {
         System.out.println("***** SIGN UP *****");
+    }
+
+    /**
+     * This helper method capitalizes the first letter
+     * @param input is the word provided to make the first letter uppercase
+     * @return the new word or null.
+     */
+    private String capitalize(String input) {
+        if (input == null) return null;
+
+        return input.substring(0, 1).toUpperCase() + input.substring(1);
     }
 }
