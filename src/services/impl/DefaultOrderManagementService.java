@@ -12,7 +12,7 @@ public class DefaultOrderManagementService implements OrderManagementService {
     private static DefaultOrderManagementService instance;
 
     // Contains a list of all the orders.
-    private static List<Order> orders;
+    private final static List<Order> orders = new ArrayList<>();
 
     private DefaultOrderManagementService() {}
 
