@@ -46,6 +46,6 @@ public class DefaultCart implements Cart {
      */
     @Override
     public void clear() {
-        this.products.clear();
+        products = null;
     }
 }
