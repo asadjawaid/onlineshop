@@ -9,8 +9,8 @@ import services.impl.DefaultUserManagementService;
 import java.util.List;
 
 public class CustomerListMenu implements Menu {
-    private ApplicationContext context;
-    private UserManagementService userManagementService;
+    private final ApplicationContext context;
+    private final UserManagementService userManagementService;
 
     {
         context = ApplicationContext.getInstance();
@@ -25,7 +25,7 @@ public class CustomerListMenu implements Menu {
         // Get all the users
         List<User> users = userManagementService.getUsers();
 
-        if (users.isEmpty()) {
+        if (users.size() == 0) {
             System.out.println("Unfortunately, there are no users at the moment!");
         } else {
             printMenuHeader();

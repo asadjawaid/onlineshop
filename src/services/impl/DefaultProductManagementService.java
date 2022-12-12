@@ -8,7 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * We are going to have only one instance during the execution of the program
+ * We are going to have only one instance during the execution of the program.
+ * This class manages all the products. It will initialize the products before the main application
+ * starts.
  */
 public class DefaultProductManagementService implements ProductManagementService {
     private static List<Product> products = null;

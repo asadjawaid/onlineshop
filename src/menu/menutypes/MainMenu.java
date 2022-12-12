@@ -42,8 +42,8 @@ public class MainMenu implements Menu {
         while (true) {
             printMenuHeader();
 
-            System.out.println("User input: ");
-            String userInput = scanner.nextLine();
+            System.out.print("User input: ");
+            String userInput = scanner.nextLine().trim();
 
             if (userInput.equalsIgnoreCase("exit")) {
                 System.out.println("Have a great day!");
@@ -92,7 +92,6 @@ public class MainMenu implements Menu {
             }
         }
 
-        scanner.close();
         menuToNavigate.start();
     }
 
