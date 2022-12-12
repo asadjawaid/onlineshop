@@ -23,7 +23,8 @@ public class SettingsMenu implements Menu {
      */
     @Override
     public void start() {
-        Menu menuToNavigateTo;
+        Menu menuToNavigateTo = null;
+        int tries = 2;
 
         if (context.getLoggedInUser() == null) {
             System.out.println("Please, log in or create new account to change your account settings");
@@ -32,7 +33,7 @@ public class SettingsMenu implements Menu {
         }
 
         mainLoop:
-        while (true) {
+        while (tries != 0) {
             String option = selectOption();
             switch (option) {
                 case "1": {
@@ -47,9 +48,13 @@ public class SettingsMenu implements Menu {
                     menuToNavigateTo = context.getMainMenu();
                     break mainLoop;
                 }
-                default: System.out.println("Invalid option! Please enter 1 or 2. Try one more time or type 'menu' to go back to the main menu.");
+                default:
+                    System.out.println("Invalid option! Please enter 1 or 2. Try one more time or type 'menu' to go back to the main menu.");
+                    tries--;
             }
         }
+
+        if (tries == 0) menuToNavigateTo = context.getMainMenu();
 
         menuToNavigateTo.start();
     }
