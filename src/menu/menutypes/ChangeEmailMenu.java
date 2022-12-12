@@ -24,14 +24,13 @@ public class ChangeEmailMenu implements Menu {
 
         printMenuHeader();
         changeEmail();
+        context.getMainMenu().start();
     }
 
     public void changeEmail() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter new email: ");
         String newEmail = scanner.nextLine();
-
-        scanner.close();
 
         context.getLoggedInUser().setEmail(newEmail); // updates the email for the current logged in user
         System.out.println("Your email has been successfully changed!");
